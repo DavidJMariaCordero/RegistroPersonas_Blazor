@@ -30,6 +30,7 @@ namespace RegistroPersonas_Blazor
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddSyncfusionBlazor();
             services.AddBlazoredToast();
             services.AddRazorPages();
@@ -40,6 +41,7 @@ namespace RegistroPersonas_Blazor
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NDQ4ODE1QDMxMzkyZTMxMmUzMGtCMTR2cm5STUt3aW1Nc2poc0JPMVN1T3pmRStpQzY0TEJXRldIUklIYnM9");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

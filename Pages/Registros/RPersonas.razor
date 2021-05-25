@@ -18,10 +18,10 @@
                         <InputNumber @bind-Value="Persona.PersonaId" class="form-control" />
                         <ValidationMessage For="@(() => Persona.PersonaId)" />
                         <div class="input-group-append">
-                            <button type="button" class="btn btn-primary" @onclick="Buscar">    
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                                    </svg>Buscar
+                            <button type="button" class="btn btn-primary" @onclick="Buscar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>Buscar
                             </button>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                 <div class="form-group">
                     <label for="Telefono">Teléfono</label>
                     <div class="input-group">
-                        <SfMaskedTextBox @bind-Value="Persona.Telefono" Mask="[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]" class="form-control" />
+                        <SfMaskedTextBox @bind-Value="Persona.Telefono" Mask="[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]" />
                         <ValidationMessage For="@(() => Persona.Telefono)" />
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                 <div class="form-group">
                     <label for="Cedula">Cédula</label>
                     <div class="input-group">
-                        <SfMaskedTextBox @bind-Value="Persona.Cedula" Mask="[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9][0-9]-[0-9]" class="form-control" />
+                        <SfMaskedTextBox Width="20" @bind-Value="Persona.Cedula" Mask="[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9][0-9]-[0-9]" />
                         <ValidationMessage For="@(() => Persona.Cedula)" />
                     </div>
                 </div>
@@ -64,6 +64,14 @@
                     <div class="input-group">
                         <InputDate id="fecha" @bind-Value="Persona.FechaNacimiento" class="form-control" />
                         <ValidationMessage For="@(() => Persona.FechaNacimiento)" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Balance</label>
+                    <div class="input-group">
+                        <SfNumericTextBox TValue="double" Decimals="2" Format="c2" Readonly="true" @bind-Value="Persona.Balance" class="form-control" />
+                        <ValidationMessage For="@(() => Persona.Balance)" />
                     </div>
                 </div>
 
@@ -102,13 +110,11 @@
         public int PersonaId { get; set; }
 
         private Personas Persona = new Personas();
-        //private string TipoSeleccionado = "0";
-        //private string TelefonoSeleccionado;
         protected override void OnInitialized()
         {
-            Limpiar(); //siempre se hace nuevo
+            Limpiar(); 
 
-            Buscar(); //solo hace efecto si se paso un id por parametro
+            Buscar(); 
         }
         private void Limpiar()
         {

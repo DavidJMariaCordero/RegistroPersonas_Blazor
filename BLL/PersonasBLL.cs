@@ -119,5 +119,70 @@ namespace RegistroPersonas_Blazor.BLL
             }
             return persona;
         }
+
+        public static bool AsignarBalance(int id, double balance)
+        {
+
+            Personas persona = Buscar(id);
+            if (persona != null)
+            {
+                persona.Balance += balance;
+                Guardar(persona);
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public static bool ModificarBalance(int id, double balance, double Monto)
+        {
+
+            Personas persona = Buscar(id);
+            if (persona != null)
+            {
+                persona.Balance -= balance;
+                persona.Balance += Monto;
+                Guardar(persona);
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public static bool EliminarBalance(int id, double balance)
+        {
+
+            Personas persona = Buscar(id);
+            if (persona != null)
+            {
+                persona.Balance -= balance;
+                Guardar(persona);
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public static List<Personas> GetList()
+        {
+            List<Personas> lista = new List<Personas>();
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                lista = contexto.Personas.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return lista;
+
+        }
+
     }
 }

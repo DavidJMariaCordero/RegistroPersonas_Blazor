@@ -11,6 +11,8 @@ namespace RegistroPersonas_Blazor.Models
         [Key]
         public int PersonaId { get; set; }
 
+        public double Balance { get; set; }
+
         [Required(ErrorMessage = "Es obligatorio introducir el nombre")]
         public string Nombres { get; set; }
 
@@ -20,6 +22,7 @@ namespace RegistroPersonas_Blazor.Models
         public string Cedula { get; set; }
         [Required(ErrorMessage = "Es obligatorio introducir una dirección")]
         public string Direccion { get; set; }
+
         public DateTime FechaNacimiento { get; set; } = DateTime.Now;
     }
 }
