@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistroPersonas_Blazor", "RegistroPersonas_Blazor.csproj", "{E8CEFE9D-080B-451C-BBE1-64CBF52BD9F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistroPersonas_BlazorTests", "..\RegistroPersonas_BlazorTests\RegistroPersonas_BlazorTests.csproj", "{CCF12D0E-9010-4E44-92C9-ACF7A230D0F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistroPersonas_BlazorTests", "..\RegistroPersonas_BlazorTests\RegistroPersonas_BlazorTests.csproj", "{CCF12D0E-9010-4E44-92C9-ACF7A230D0F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

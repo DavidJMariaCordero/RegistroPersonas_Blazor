@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\Personas.db-shm" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Blazored.Toast" Version="3.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.6">
@@ -37,6 +41,10 @@
     <PackageReference Include="Syncfusion.Blazor.SplitButtons" Version="19.1.0.63" />
     <PackageReference Include="Syncfusion.Blazor.Themes" Version="19.1.0.63" />
     <PackageReference Include="Syncfusion.Blazor.WordProcessor" Version="19.1.0.63" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
 
 </Project>
